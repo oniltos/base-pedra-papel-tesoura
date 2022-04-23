@@ -8,9 +8,12 @@ const displayCpuChoice = document.querySelector('.cpu-choice .choice')
 const displayPersonScore = document.querySelector('.person-score span')
 const displayCpuScore = document.querySelector('.cpu-score span')
 
+const game = new RockPaperScissors(5)
+
+
 function playGame(event) {
     const choice = event.currentTarget.getAttribute('id')
-    const round = play(choice)
+    const round = game.play(choice)
     console.log(round)
     
     displayPersonChoice.innerHTML = ''
@@ -26,8 +29,10 @@ function playGame(event) {
     cpuChoiceImage.setAttribute('width', '50px')
     displayCpuChoice.appendChild(cpuChoiceImage)
     
-    displayPersonScore.innerHTML = personPoints
-    displayCpuScore.innerHTML = cpuPoints
+    displayPersonScore.innerHTML = game.personPoints
+    displayCpuScore.innerHTML = game.cpuPoints
+
+    game.checkGameOver()
 }
 
 function enableButtons() {
@@ -43,9 +48,9 @@ function disableButtons() {
 }
 
 function resetGame() {
-    reset()
-    displayPersonScore.innerHTML = personPoints
-    displayCpuScore.innerHTML = cpuPoints
+    game.reset()
+    displayPersonScore.innerHTML = game.personPoints
+    displayCpuScore.innerHTML = game.cpuPoints
     displayPersonChoice.innerHTML = ''
     displayCpuChoice.innerHTML = ''
     disableButtons()

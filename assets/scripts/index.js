@@ -3,8 +3,8 @@ const btnPaper = document.getElementById('paper')
 const btnScissors = document.getElementById('scissors')
 const btnReset = document.getElementById('reset')
 const btnStart = document.getElementById('start')
-const displayPersonChoice = document.querySelector('.person-choice .choice')
-const displayCpuChoice = document.querySelector('.cpu-choice .choice')
+const displayPersonChoice = document.querySelector('.person-choice')
+const displayCpuChoice = document.querySelector('.cpu-choice')
 const displayPersonScore = document.querySelector('.person-score span')
 const displayCpuScore = document.querySelector('.cpu-score span')
 
@@ -14,12 +14,12 @@ const game = new RockPaperScissors(5)
 function playGame(event) {
     const choice = event.currentTarget.getAttribute('id')
     const round = game.play(choice)
-    console.log(round)
     
     displayPersonChoice.innerHTML = ''
     displayCpuChoice.innerHTML = ''
     
     const personChoiceImage = document.createElement('img')
+    console.log(round);
     personChoiceImage.setAttribute('src', `./assets/img/${round.personChoice}.svg`)
     personChoiceImage.setAttribute('width', '50px')
     displayPersonChoice.appendChild(personChoiceImage)

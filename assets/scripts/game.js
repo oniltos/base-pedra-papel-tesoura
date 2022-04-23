@@ -82,5 +82,8 @@ class RockPaperScissors {
         this.cpuChoice = ''
         this.personChoice = ''
         this.roundWinner = ''
+        this.roundsPlayed = 0
+        this.gameOver = false
+        this.gameWinner = ''
     }
 }

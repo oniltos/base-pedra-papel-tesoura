@@ -1,5 +1,13 @@
 html {
     font-family: 'Major Mono Display', monospace;
+    background-color: rgb(30,7,65);
+    color: rgb(241,234,209);
+    border-color: rgb(241,234,209);
+}
+
+.container {
+    width: 550px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -7,23 +15,46 @@ h1 {
 }
 
 .choices {
-    width: 300px;
+    width: 400px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
 
-.choices div {
-    width: 100px;
-    height: 80px;
+.choices > div {
+    width: 150px;
+    height: 100px;
+    display: flex;
+    justify-content:  center;
     border-radius: 5px;
-    border: dashed 1px #333
+    border: dashed 1px
+}
+
+.choices img {
+    width: 75px;
+    filter: invert(84%) sepia(27%) saturate(156%) hue-rotate(4deg) brightness(109%) contrast(89%);
 }
 
 .score {
     width: 200px;
+    margin: 50px auto 0 auto;
     display: flex;
-    border: 1px dashed purple;
+    justify-content: space-around;
+    border: 1px dashed;
     margin-bottom: 10px
+}
+
+.controls {
+    width: 300px;
+    margin: 0 auto;
+}
+
+button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 2px;
+    background-color: rgb(241,234,209);
+    font-family: 'Major Mono Display', monospace;
 }
 
 
@@ -34,17 +65,26 @@ h1 {
     justify-content: space-around;
 }
 
+.start-reset {
+    flex-direction: column;
+    align-items: center;
+}
+
+.start-reset button {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
 p#score-label {
     margin-bottom: 0
 }
 
-button {
-    border: none;
-    padding: 5px 10px;
-    border-radius: 2px;
+#start {
+    background: rgb(45,139,146);
+    color: rgb(241,234,209);
 }
 
-#start {
-    background: blueviolet;
-    color: #fff
+#reset {
+    background: rgb(132,181,162);
+    color: rgb(241,234,209);
 }

@@ -88,3 +88,26 @@ p#score-label {
     background: rgb(132,181,162);
     color: rgb(241,234,209);
 }
+
+@keyframes blink { 
+    50% { 
+        border-color: rgb(132,181,162) 
+    } 
+}
+
+.animate-blink {
+    animation: blink .5s step-end infinite alternate; 
+}
+
+footer {
+    margin-top: 60px;
+    text-align: center;
+}
+
+a {
+   color: rgb(241,234,209);
+}
+
+.credits {
+    text-align: center;
+}

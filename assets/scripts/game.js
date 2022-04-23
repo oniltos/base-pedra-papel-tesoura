@@ -10,6 +10,7 @@
 //10. O jogo só pode começar depois de um sinal de start X
 //11. Criar uma classe para organizar o jogo X
 //12. Vence o melhor de n rounds X
+//13. Refac para organizar o código
 
 class RockPaperScissors {
     constructor(maxRounds) {
@@ -35,47 +36,29 @@ class RockPaperScissors {
         if(!this.gameOver) {
             //Incrementa o número de rounds jogados
             this.roundsPlayed++
-
             //Atribui uma escolha aleatória para a CPU
             this.cpuChoice = this.getCpuChoice()
-
             //Atribui uma escolha para a pessoa que está jogando
             this.personChoice = personChoice
-        
-            if(this.personChoice === this.cpuChoice) {
-                this.roundWinner = null
-                return {
-                    winner: this.roundWinner, 
-                    personChoice: this.personChoice, 
-                    cpuChoice: this.cpuChoice
-                }
-            } else if (
-                (this.personChoice === 'rock' && this.cpuChoice === 'scissors') ||
-                (this.personChoice === 'paper' && this.cpuChoice === 'rock') ||
-                (this.personChoice === 'scissors' && this.cpuChoice === 'paper')
-            ) {
-                this.personPoints++
-                this.roundWinner = 'person'
-                return {
-                    winner: this.roundWinner, 
-                    personChoice: this.personChoice, 
-                    cpuChoice: this.cpuChoice
-                }
-            } else {
-                this.cpuPoints++
-                this.roundWinner = 'cpu'
-                return {
-                    winner: this.roundWinner, 
-                    personChoice: this.personChoice, 
-                    cpuChoice: this.cpuChoice
-                }
-            }
+            this.checkRoundWinner()
+        }
+
+        return this
+    }
+
+    checkRoundWinner() {
+        if(this.personChoice === this.cpuChoice) {
+            this.roundWinner = null
+        } else if (
+            (this.personChoice === 'rock' && this.cpuChoice === 'scissors') ||
+            (this.personChoice === 'paper' && this.cpuChoice === 'rock') ||
+            (this.personChoice === 'scissors' && this.cpuChoice === 'paper')
+        ) {
+            this.personPoints++
+            this.roundWinner = 'person'
         } else {
-            return {
-                winner: this.roundWinner, 
-                personChoice: this.personChoice, 
-                cpuChoice: this.cpuChoice
-            }
+            this.cpuPoints++
+            this.roundWinner = 'cpu'
         }
     }
 

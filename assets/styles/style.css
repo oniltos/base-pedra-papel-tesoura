@@ -1,0 +1,50 @@
+html {
+    font-family: 'Major Mono Display', monospace;
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+}
+
+.choices {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.choices div {
+    width: 100px;
+    height: 80px;
+    border-radius: 5px;
+    border: dashed 1px #333
+}
+
+.score {
+    width: 200px;
+    display: flex;
+    border: 1px dashed purple;
+    margin-bottom: 10px
+}
+
+
+.buttons, .start-reset {
+    margin-top: 20px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+
+p#score-label {
+    margin-bottom: 0
+}
+
+button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
+#start {
+    background: blueviolet;
+    color: #fff
+}

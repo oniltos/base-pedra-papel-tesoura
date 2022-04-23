@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Pedra, Papel e Tesoura</title>
+</head>
+<body>
+    <h1>Pedra, Papel e Tesoura</h1>
+    <p id="score-label">Placar</p>
+    <div class="score">
+        <div class="person-score">
+            Person: <span>0</span>
+        </div>
+        <div> X </div>
+        <div class="cpu-score">
+            CPU: <span>0</span>
+        </div>
+    </div>
+    <div class="choices">
+        <div class="person-choice">
+            <p>Person</p>
+            <p class="choice">
+                
+            </p>
+        </div>
+        <div class="cpu-choice">
+            <p>CPU</p>
+            <p class="choice">
+
+            </p>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="rock" disabled>Pedra</button>
+        <button id="paper" disabled>Papel</button>
+        <button id="scissors" disabled>Tesoura</button>
+    </div>
+    <div class="start-reset">
+        <button id="start">Start</button>
+        <button id="reset">Reset</button>
+    </div>
+    <script src="./assets/scripts/game.js"></script>
+    <script src="./assets/scripts/index.js"></script>
+</body>
+</html>
